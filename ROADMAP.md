@@ -17,7 +17,7 @@ All features need to have **front and back implemetation**
   - [ ] Tests
     - [X] Backend
     - [ ] Frontend
-- [ ] NAMING_REFERENCE.md
+- [X] NAMING_REFERENCE.md
 - [ ] UI mockups
   - [ ] Color palette and typography
   - [ ] Figma mockups:
