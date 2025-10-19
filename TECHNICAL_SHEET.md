@@ -8,6 +8,7 @@ This document describes the technical architecture, dependencies, and developmen
   - [Architecture](#architecture)
     - [General structure](#general-structure)
     - [Data flow](#data-flow)
+    - [Docker compose](#docker-compose)
     - [Class diagram](#class-diagram)
   - [Tech Stack](#tech-stack)
   - [Backend (Symfony)](#backend-symfony)
@@ -69,6 +70,63 @@ diary/
    - Daily entries (mood, sleep, water, notes, etc.)
    - Contacts and relationship details
 4. The **frontend** retrieves and visualizes this data via forms, timelines, and charts.
+
+### Docker compose
+```mermaid
+graph TD
+
+%% =============================
+%% Networks
+%% =============================
+subgraph backend_network["Network: backend (bridge)"]
+    PHP["PHP (php-fpm)<br/>Service: php"]
+    API["API (nginx alpine)<br/>Service: api"]
+    DB["MongoDB<br/>Service: db"]
+    ME["Mongo Express<br/>Service: mongo-express"]
+end
+
+subgraph frontend_network["Network: frontend (bridge)"]
+    REACT["React Builder<br/>Service: react"]
+    FRONT["Frontend Server (nginx)<br/>Service: front"]
+end
+
+subgraph volumes["Volumes"]
+    VOL_DB["db:/data/db"]
+    VOL_REACT["react_build:/app/dist"]
+end
+
+%% =============================
+%% Connections / Dependencies
+%% =============================
+
+%% Backend
+PHP -->|depends_on| DB
+API -->|connects to| PHP
+ME -->|connects to| DB
+
+%% Frontend
+REACT -->|depends_on| API
+FRONT -->|depends_on| REACT
+
+%% Volumes
+DB --- VOL_DB
+REACT --- VOL_REACT
+FRONT --- VOL_REACT
+
+%% External Ports (dotted lines)
+API -.->|"80:80"| Internet["Host"]
+FRONT -.->|"3000:80"| Internet
+ME -.->|"8081:8081"| Internet
+DB -.->|"${MONGO_PORT}:${MONGO_PORT}"| Internet
+
+%% =============================
+%% Helper
+%% =============================
+subgraph helper["Development helper"]
+    COMPOSER["Composer Install<br/>Service: composer-install<br/>Profile: composer"]
+end
+COMPOSER --> PHP
+```
 
 ### Class diagram
 ```mermaid
