@@ -14,7 +14,10 @@ All features need to have **front and back implemetation**
 - [X] ROADMAP.md
 - [ ] TECHNICAL_SHEET.md
   - [ ] Class diagram
-- [ ] NAMING_REFERENCE.md
+  - [ ] Tests
+    - [X] Backend
+    - [ ] Frontend
+- [X] NAMING_REFERENCE.md
 - [ ] UI mockups
   - [ ] Color palette and typography
   - [ ] Figma mockups:
