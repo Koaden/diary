@@ -145,6 +145,7 @@ src/
 
 ### Backend
 - **PHPStan:** static analysis for code safety and best practices
+- ***PHP CS Fixer?*** 
 
 ### Frontend
 - **ESLint:** detects code issues and enforces code style
@@ -153,6 +154,7 @@ src/
 
 ## Testing
 Tests are created during the developpement
+
 ### Backend
 - **phpspec:** unit and behavior-driven testing for domain logic
 - **Behat:** functional and acceptance tests (BDD)

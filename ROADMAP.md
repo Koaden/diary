@@ -4,7 +4,7 @@ This document outlines the current and planned development tasks for the project
 ---
 
 ## MVP (v1.0.0)
-**Focus:** core features and project's backbone
+**Focus:** Core features and project's backbone
 
 All features need to have **front and back implemetation**
 
@@ -14,9 +14,6 @@ All features need to have **front and back implemetation**
 - [X] ROADMAP.md
 - [ ] TECHNICAL_SHEET.md
   - [ ] Class diagram
-  - [ ] Tests
-    - [X] Backend
-    - [ ] Frontend
 - [ ] NAMING_REFERENCE.md
 - [ ] UI mockups
   - [ ] Color palette and typography
@@ -30,8 +27,6 @@ All features need to have **front and back implemetation**
 - [X] Docker Compose setup (backend, frontend, db)
 - [X] Makefile commands (`make start`, `make stop`, etc.)
 - [X] Environment variables setup
-- [ ] CI/CD
-- [ ] Linter
 - [ ] Fixtures
 
 ### Features
@@ -41,7 +36,6 @@ All features need to have **front and back implemetation**
   - [ ] Login
   - [ ] Logout
 - [ ] Daily form
-  - [ ] Mardown notes
   - [ ] Mood indicator (based on emotions)
   - [ ] Sleep periods
   - [ ] Water consumption
@@ -57,27 +51,24 @@ All features need to have **front and back implemetation**
 - [ ] Homepage
 
 ## Mobile Update (v1.2.0)
-**Focus:** mobile app
+**Focus:** Improvements and code testing 
 
 All features need to have **front and back implemetation**
 
 ### Documentation
 - [ ] Update `TECHNICAL_SHEET.md`
-  - [ ] Mobile apk generator process
-  - [ ] Movies and tv shows api
-  - [ ] Video games api
-  - [ ] Board games api
+
+### DevOps
+- [ ] CI/CD
+- [ ] Linter
+- [ ] Tests
 
 ### Features
-- [ ] Retrospectives
-  - [ ] Movies
-  - [ ] TV shows
-  - [ ] Video games
-  - [ ] Board games
+- [ ] Markdown support
 - [ ] Dark/light mode
 
 ## Pictures Update (v1.3.0)
-**Focus:** adding pictures
+**Focus:** Adding pictures
 
 All features need to have **front and back implemetation**
 
